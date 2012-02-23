@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>CSS timing experiments</title>
-    <%= stylesheet_link_tag(:runner) %>
+    <%= stylesheet_link_tag(*@experiments.keys) %>
     <%= javascript_include_tag :runner %>
   </head>
   <body>
@@ -17,21 +17,6 @@
       All pages include very simple JS which simply times various loading events (initial load, head loaded, body loaded, onready etc).
     </p>
     
-    <table id="experiments">
-      <tr>
-        <th>Experiment Name</th>
-        <th>Description</th>
-        <th>Parse Time</th>
-        <th>Render Time</th>
-      </tr>
-      <% @experiments.keys.each do |name| %>
-        <tr data-experiment="<%= name %>">
-          <th><%= link_to name.to_s.capitalize, :action => name %></th>
-          <td><%= @experiments[name] %></td>
-          <td class="parse">Loading...</td>
-          <td class="render">Loading...</td>
-        </tr>
-      <% end %>
-    </table>
+    <p>This page is simply here to warm caches. When it has fully loaded, <%= link_to 'click here', :action => :runner %>.</p>
   </body>
 </html>
