@@ -27,7 +27,7 @@
       </tr>
       <% @experiments.keys.each do |name| %>
         <tr data-experiment="<%= name %>">
-          <th><%= name.to_s.capitalize %></th>
+          <th><%= link_to name.to_s.capitalize, :action => name %></th>
           <td><%= @experiments[name] %></td>
           <td class="parse">Loading...</td>
           <td class="render">Loading...</td>
