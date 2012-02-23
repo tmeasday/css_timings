@@ -47,7 +47,8 @@ module CssTimings
     
     config.assets.precompile += ['runner.css', 'empty.css', 'base.css',
       'class_inapplicable.css', 'general_inapplicable.css', 'specific_inapplicable.css', 
-      'one_rule_many_selectors.css', 'one_rule_many_selectors_and_rules.css', 'big_styles.css']
+      'one_rule_many_selectors.css', 'one_rule_many_selectors_and_rules.css', 'big_styles.css',
+      'runner.js']
     
   end
 end
