@@ -10,7 +10,10 @@
 </head>
 <body>
   <script>window.css_timings.body_start = t()</script>
-
+  
+  <% 10000.times do |i|%>
+    <div class="div-<%= i+1 %>">A div with some basic text inside</div>
+  <% end %>
   <%= yield %>
 
   <script>

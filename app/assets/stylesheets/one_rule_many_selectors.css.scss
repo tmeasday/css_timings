@@ -1,0 +1,10 @@
+// one long rule with many selectors that target each of our guys
+.div-1 {
+  width: 100px;
+}
+
+@for $i from 2 through 10000 {
+  .div-#{$i} {
+    @extend .div-1;
+  }
+}

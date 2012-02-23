@@ -18,7 +18,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'compass'
+gem 'compass', '>= 0.12.alpha.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

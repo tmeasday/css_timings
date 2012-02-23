@@ -1,0 +1,11 @@
+@import 'include/base';
+@import 'compass';
+
+// less extraneous styles that are longer
+@for $i from 1 through 1000 {
+  .random-#{$i} {
+    @include border-radius(10px);
+    @include opacity(1);
+    @include transform('scale(1)');
+  }
+}

@@ -1,0 +1,6 @@
+// pretty much the same as base, except that all the rules are the same
+@for $i from 1 through 10000 {
+  .div-#{$i} {
+    width: 100px;
+  }
+}
