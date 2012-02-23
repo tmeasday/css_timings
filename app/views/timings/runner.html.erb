@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>CSS timing experiments</title>
-    <%= stylesheet_link_tag :runner, :base %>
+    <%# load all the stylesheets so we are sure sass has compiled them %>
+    <%= stylesheet_link_tag :runner, :base, :base_plus_random, :base_plus_general %>
     <%= javascript_include_tag :runner %>
   </head>
   <body>
@@ -27,6 +28,18 @@
       <tr data-experiment="base">
         <th>Base</th>
         <td>10k divs, each with a targeted width style</td>
+        <td class="parse">Loading...</td>
+        <td class="render">Loading...</td>
+      </tr>
+      <tr data-experiment="base_plus_random">
+        <th>Base Plus Random</th>
+        <td>10k divs, each with a targeted width style, plus 10k extraneous styles</td>
+        <td class="parse">Loading...</td>
+        <td class="render">Loading...</td>
+      </tr>
+      <tr data-experiment="base_plus_general">
+        <th>Base Plus General</th>
+        <td>10k divs, each with a targeted width style, plus 10k extraneous styles that target div on the RHS</td>
         <td class="parse">Loading...</td>
         <td class="render">Loading...</td>
       </tr>

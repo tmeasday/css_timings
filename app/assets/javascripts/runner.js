@@ -50,17 +50,23 @@
 
 
   $(function() {
-    $('#experiments tr[data-experiment]').each(function() {
-      var $row = $(this),
-        name = $row.data('experiment');
+    var $experiments = $('#experiments tr[data-experiment]');
+    
+    function recurseExperiments(n) {
+      // done
+      if (n > $experiments.length) { return; }
       
+      var $row = $experiments.eq(n), name = $row.data('experiment');
       $row.addClass('running');
       runTests(name, 10, function(timings) {
         $row.find('.render').text(timings.render);
         $row.find('.parse').text(timings.parse);
         $row.removeClass('running');
+        
+        recurseExperiments(n+1);
       });
-    })
+    }
     
+    recurseExperiments(0);
   });
 }(jQuery));
