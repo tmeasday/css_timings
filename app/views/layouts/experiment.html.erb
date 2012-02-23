@@ -6,6 +6,13 @@
     window.css_timings = {start: t() }
   </script>
   
+  <script>
+    window.onload = function() {
+      window.css_timings.body_end = t()
+      window.top.report_timings(window.css_timings);
+    }
+  </script>
+  
   <%= stylesheet_link_tag params[:action] %>
 </head>
 <body>
@@ -15,10 +22,5 @@
     <div class="div-<%= i+1 %>">A div with some basic text inside</div>
   <% end %>
   <%= yield %>
-
-  <script>
-    window.css_timings.body_end = t()
-    window.top.report_timings(window.css_timings);
-  </script>
 </body>
 </html>
