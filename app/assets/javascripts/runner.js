@@ -50,8 +50,17 @@
 
 
   $(function() {
-    runTests('base', 10, function(timings) {
-      console.log(timings);
-    });
+    $('#experiments tr[data-experiment]').each(function() {
+      var $row = $(this),
+        name = $row.data('experiment');
+      
+      $row.addClass('running');
+      runTests(name, 10, function(timings) {
+        $row.find('.render').text(timings.render);
+        $row.find('.parse').text(timings.parse);
+        $row.removeClass('running');
+      });
+    })
+    
   });
 }(jQuery));

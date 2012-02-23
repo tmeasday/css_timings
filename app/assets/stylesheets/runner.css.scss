@@ -1,0 +1,8 @@
+#experiments {
+  width: 100%;
+  [data-experiment] {
+    &.running {
+      background-color: #eee;
+    }
+  }
+}

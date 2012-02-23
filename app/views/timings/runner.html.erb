@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>CSS timing experiments</title>
-    <%= stylesheet_link_tag :base %>
+    <%= stylesheet_link_tag :runner, :base %>
     <%= javascript_include_tag :runner %>
   </head>
   <body>
@@ -16,5 +16,20 @@
       This experiment is designed to test the 'best-case' loading time, when all resources are cached (including html files, which is unrealistic).
       All pages include very simple JS which simply times various loading events (initial load, head loaded, body loaded, onready etc).
     </p>
+    
+    <table id="experiments">
+      <tr>
+        <th>Experiment Name</th>
+        <th>Description</th>
+        <th>Parse Time</th>
+        <th>Render Time</th>
+      </tr>
+      <tr data-experiment="base">
+        <th>Base</th>
+        <td>10k divs, each with a targeted width style</td>
+        <td class="parse">Loading...</td>
+        <td class="render">Loading...</td>
+      </tr>
+    </table>
   </body>
 </html>
