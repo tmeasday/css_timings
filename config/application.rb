@@ -44,5 +44,10 @@ module CssTimings
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.assets.precompile += ['runner.css', 'empty.css', 'base.css',
+      'class_inapplicable.css', 'general_inapplicable.css', 'specific_inapplicable.css', 
+      'one_rule_many_selectors.css', 'one_rule_many_selectors_and_rules.css', 'big_styles.css']
+    
   end
 end
