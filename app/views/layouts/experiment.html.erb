@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.t = function() { return (new Date).getTime(); }
+    window.css_timings = {start: t() }
+  </script>
+  
+  <%= stylesheet_link_tag params[:action] %>
+</head>
+<body>
+  <script>window.css_timings.body_start = t()</script>
+
+  <%= yield %>
+
+  <script>
+    window.css_timings.body_end = t()
+    window.top.report_timings(window.css_timings);
+  </script>
+</body>
+</html>

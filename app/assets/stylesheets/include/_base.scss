@@ -1,0 +1,7 @@
+// these are some basic styles that we actually need
+
+@for $i from 1 through 10000 {
+  .div-#{$i} {
+    width: 1px * $i;
+  }
+}
