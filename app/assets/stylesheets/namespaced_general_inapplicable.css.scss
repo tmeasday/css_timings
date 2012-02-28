@@ -1,0 +1,8 @@
+@import 'include/base';
+
+// some completely extraneous styles that do nothing, but which (RTL) target everything, except that they cannot apply
+@for $i from 1 through 10000 {
+  body#invalid-selector .random-#{$i} div {
+    width: 1px * $i;
+  }
+}
