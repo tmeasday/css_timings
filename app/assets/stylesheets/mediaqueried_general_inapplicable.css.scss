@@ -1,0 +1,10 @@
+@import 'include/base';
+
+@media only print {
+  // some completely extraneous styles that do nothing, but which (RTL) target everything
+  @for $i from 1 through 10000 {
+    .random-#{$i} div {
+      width: 1px * $i;
+    }
+  }
+}
