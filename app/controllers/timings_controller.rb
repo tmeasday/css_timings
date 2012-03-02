@@ -18,6 +18,7 @@ private
       :base => 'One different style per each 10k divs',
       :class_inapplicable => 'Base, plus 10k styles that apply to non-existent classes',
       :general_inapplicable => 'Base, plus 10k styles which rightmost target divs',
+      :general_inapplicable_less_html => 'Base, plus 10k styles which rightmost target divs, but only 1k divs',
       :specific_inapplicable => 'Base, plus 10k styles which rightmost target spans',
       :namespaced_general_inapplicable => 'Base, plus 10k styles which rightmost target divs, except they cannot apply',
       :mediaqueried_general_inapplicable => 'Base, plus 10k styles which rightmost target divs, except they cannot apply because of mediaqueries',
