@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html id="start">
   <head>
     <title>CSS timing experiments</title>
-    <%= stylesheet_link_tag(*@experiments.keys) %>
-    <%= javascript_include_tag :runner %>
+    <%= stylesheet_link_tag(*(['start'] + @experiments.keys)) %>
+    <%= javascript_include_tag :start %>
   </head>
   <body>
     <h1>CSS timing experiments</h1>
@@ -17,6 +17,15 @@
       All pages include very simple JS which simply times various loading events (initial load, head loaded, body loaded, onready etc).
     </p>
     
-    <p>This page is simply here to warm caches. When it has fully loaded, <%= link_to 'click here', :action => :runner %>.</p>
+    <p>This page is simply here to warm caches.
+      Loading: <progress value="0" max="<%= @experiments.count %>"></progress>
+    </p>
+    <p class="not_ready">
+      When it has fully loaded, <%= link_to 'click here', {:action => :runner} %>.
+    </p>
+    
+    <% @experiments.keys.each do |experiment| %>
+      <iframe src="<%= url_for :action => experiment %>"></iframe>
+    <% end %>
   </body>
 </html>
